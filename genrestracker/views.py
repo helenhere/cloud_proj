@@ -35,7 +35,7 @@ def index(request):
             genre = form.cleaned_data['genre']
             pages = form.cleaned_data['pages']
 
-
+            #newGenrePages =
             # newCar = Car.objects.create(brand_text=brand, model_text=model, consumption=consumption)
             # newCar.setId()
             # newCar.save()

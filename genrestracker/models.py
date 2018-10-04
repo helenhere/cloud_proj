@@ -1,20 +1,20 @@
 from django.db import models
 
-# class Genre(models.Model):
-#     genreName = models.CharField(max_length=140)
+class Genre(models.Model):
+    genreName = models.CharField(max_length=140)
+
+    def __str__(self):
+        return self.genreName
 #
-#     def __str__(self):
-#         return self.genreName
 #
-#
-# class UserGenre(models.Model):
-#     username = models.CharField(max_length=200)
-#     genre = models.ForeignKey(Genre, on_delete=models.CASCADE, null=True)
-#     pages = models.IntegerField()
-#     date = models.DateTimeField()
-#
-#     def __str__(self):
-#         return self.username + " - " + str(self.genre) + str(self.date)
+class UserGenre(models.Model):
+    username = models.CharField(max_length=200)
+    genre = models.ForeignKey(Genre, on_delete=models.CASCADE, null=True)
+    pages = models.IntegerField()
+    date = models.DateTimeField()
+
+    def __str__(self):
+        return self.username + " - " + str(self.genre) + str(self.date)
 
 # Create your models here.
 # class Greeting(models.Model):
