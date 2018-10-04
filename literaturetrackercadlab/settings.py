@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'literaturetrackercadlab.wsgi.application'
 
 import dj_database_url
 DATABASES = {
-    'default': dj_database_url.parse('postgres://yurzznnkjqjmzv:3397d3a362d964aa9964abf63a4a57484dbf920e3d96bd1beb66db4728397e29@ec2-50-17-225-140.compute-1.amazonaws.com:5432/d6jia2n2n2pgpe', conn_max_age=600)
+    'default': dj_database_url.parse('postgres://vuyncelsdcxkxp:114c71ce7f7185a4b652695935b3468bf3d3dd8eb7411d61a828cd9d8f58187d@ec2-54-163-245-44.compute-1.amazonaws.com:5432/d4rsdqu92rrqq2', conn_max_age=600)
 }
 
 
