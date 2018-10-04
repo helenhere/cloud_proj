@@ -1,6 +1,71 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponse
+from genrestracker.forms import LogIn, NewUserGenre
+from django.contrib.auth.models import User
+
+def login(request):
+    if request.method == 'POST':
+        form = LogIn(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+
+            try:
+                currentUser = User.objects.get(username=username)
+            except:
+                return HttpResponse('No such user')
+
+            if currentUser.check_password(password):
+                request.session['username'] = username
+
+                return redirect('index/')#, username=username)
+            else:
+                return HttpResponse('Incorrect password')
+
+    else:
+        form = LogIn()
+
+    return render(request, 'login.html', {'form': form})
+
+def index(request):
+    if request.method == 'POST':
+        form = NewUserGenre(request.POST)
+        if form.is_valid():
+            genre = form.cleaned_data['genre']
+            pages = form.cleaned_data['pages']
+
+
+            # newCar = Car.objects.create(brand_text=brand, model_text=model, consumption=consumption)
+            # newCar.setId()
+            # newCar.save()
+            #
+            # currentUserCars = UserCar.objects.filter(username=request.session['username'])
+            # if currentUserCars:
+            #     currentUserCars[0].cars.add(newCar)
+            #     currentUserCars[0].save()
+            # else:
+            #     newCurrentUserCars = UserCar.objects.create(username=request.session['username'])
+            #     newCurrentUserCars.cars.add(newCar)
+            #     newCurrentUserCars.save()
+
+            #result = str(Car.objects.get(brand_text=brand, model_text=model, consumption=consumption)) + ' successfully added'
+
+            result = genre + " " + str(pages)
+
+            return render(request, 'result.html', {'result': result})
+    else:
+        form = NewUserGenre()
+
+    return render(request, 'index.html', {'form': form})
+
+
+
+
+
+def show(request):
+    return HttpResponse("!!!!!!!!!!!!!")
+
 
 """
 #from .models import Greeting

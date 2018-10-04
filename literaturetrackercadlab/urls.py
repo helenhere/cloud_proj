@@ -21,16 +21,16 @@ import genrestracker.views
 admin.autodiscover()
 
 urlpatterns = [
-    #url(r'^db', fuelconsumption.views.db, name='db'),
-    #url(r'^$', fuelconsumption.views.login, name='login'),
+    #url(r'^db', genrestracker.views.db, name='db'),
+    #url(r'^$', genrestracker.views.login, name='login'),
     path('admin/', admin.site.urls),
-    # url(r'^index/', fuelconsumption.views.index, name='index'),
-    # url(r'^addCar/', fuelconsumption.views.addNewCar, name='addCar'),
-    # url(r'^chooseCar/', fuelconsumption.views.chooseCar, name='chooseCar'),
-    # url(r'^show/', fuelconsumption.views.show, name='show'),
-    # url(r'^addMiles/', fuelconsumption.views.addMiles, name='addMiles'), #/(.*.{0,})
+    url(r'^index/', genrestracker.views.index, name='index'),
+    # url(r'^addCar/', genrestracker.views.addNewCar, name='addCar'),
+    # url(r'^chooseCar/', genrestracker.views.chooseCar, name='chooseCar'),
+    url(r'^show/', genrestracker.views.show, name='show'),
+    # url(r'^addMiles/', genrestracker.views.addMiles, name='addMiles'), #/(.*.{0,})
     #
-    # url(r'^$', fuelconsumption.views.login, name='login'),
-    # url(r'^login/', fuelconsumption.views.login, name='login'),
-    #url(r'^logout/$', fuelconsumption.views.logout, name='logout')
+    url(r'^$', genrestracker.views.login, name='login'),
+    url(r'^login/', genrestracker.views.login, name='login'),
+    #url(r'^logout/$', genrestracker.views.logout, name='logout')
 ]
