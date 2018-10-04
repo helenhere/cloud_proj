@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <p>Add pages to genre</p>
-<form method="post">
+    <form method="post" action="{% url 'result' %}">
     {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Add pages" />
+    {% autoescape off %}{{ form }}{% endautoescape %}
+    <input type="submit" value="Submit" />
 </form>
 </html>
 

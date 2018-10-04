@@ -14,7 +14,8 @@ class UserGenre(models.Model):
     date = models.DateTimeField()
 
     def __str__(self):
-        return self.username + " - " + str(self.genre) + str(self.date)
+        return '%s - %s - %s pages (%s)' % \
+               (self.username, str(self.genre), str(self.pages), self.date.strftime('%d %B %Y - %H:%M:%S'))
 
 # Create your models here.
 # class Greeting(models.Model):

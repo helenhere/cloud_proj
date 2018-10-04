@@ -38,6 +38,11 @@ class NewCarForm(forms.Form):
 class LogIn(forms.Form):
     username = forms.CharField(label='Username', max_length=80)
     password = forms.CharField(label='Password', max_length=80)
+
+
+class SignUp(forms.Form):
+        username = forms.CharField(label='Username', max_length=80)
+        password = forms.CharField(label='Password', max_length=80)
 #
 #
 # class SearchMileage(forms.Form):

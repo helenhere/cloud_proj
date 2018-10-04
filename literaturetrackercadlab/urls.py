@@ -21,16 +21,20 @@ import genrestracker.views
 admin.autodiscover()
 
 urlpatterns = [
+
     #url(r'^db', genrestracker.views.db, name='db'),
     #url(r'^$', genrestracker.views.login, name='login'),
     path('admin/', admin.site.urls),
     url(r'^index/', genrestracker.views.index, name='index'),
+    url(r'^result/', genrestracker.views.result, name='result'),
     # url(r'^addCar/', genrestracker.views.addNewCar, name='addCar'),
     # url(r'^chooseCar/', genrestracker.views.chooseCar, name='chooseCar'),
     url(r'^show/', genrestracker.views.show, name='show'),
     # url(r'^addMiles/', genrestracker.views.addMiles, name='addMiles'), #/(.*.{0,})
     #
     url(r'^$', genrestracker.views.login, name='login'),
-    url(r'^login/', genrestracker.views.login, name='login'),
+    # url(r'^login/', genrestracker.views.login, name='login'),
+    url(r'^successfulSignup/', genrestracker.views.successfulSignup, name='successfulSignup'),
+    url(r'^signup/', genrestracker.views.signup, name='signup'),
     #url(r'^logout/$', genrestracker.views.logout, name='logout')
 ]

@@ -1,10 +1,1 @@
-<h3>Your cars</h3>
-{% for q in queryset %}
-    <p>Car: {{ q.auto.brand_text }} {{ q.auto.model_text }} ({{ q.auto.consumption }} liters / 100 km)</p>
-    <p>Distance: {{ q.distance }}</p>
-    <p>Liters used: {{ q.liters }}</p>
-    <p>Date: {{ q.date.day }}.{{ q.date.month }}.{{ q.date.year }} ({{ q.date.ctime }})</p>
-    <hr>
-{% endfor %}
-<br><br>
 {{ summary|safe }}
