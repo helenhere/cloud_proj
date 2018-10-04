@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add miles</title>
+</head>
+<body>
+<p>Add distance for {{ car }}</p>
+<form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Add" />
+</form>
+<!--<a href="{% url 'show' %}">Show database</a>-->
+</body>
+</html>

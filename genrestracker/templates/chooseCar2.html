@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Choose car</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Choose" />
+</form>
+<p><a href="{% url 'index' %}">Back</a></p>
+</body>
+</html>

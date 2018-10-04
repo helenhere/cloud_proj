@@ -1,0 +1,13 @@
+<form action="/chooseCar">
+    <input type="submit" value="Choose car" />
+</form>
+
+<form action="/addCar">
+    <input type="submit" value="Add new car" />
+</form>
+
+<form action="{% url 'show' %}">
+    <input type="submit" value="Show database" />
+</form>
+
+<a href="{% url 'show' %}">Show database</a>

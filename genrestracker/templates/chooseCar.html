@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Choose car</title>
+</head>
+<body>
+<form method="post" action="/addMiles/">
+    {% csrf_token %}
+    {% autoescape off %}{{ form }}{% endautoescape %}
+
+    <input type="submit" value="Submit" />
+</form>
+</body>
+</html>
